@@ -8,44 +8,42 @@ import CardContent from '@mui/material/CardContent';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import LinearProgress, { linearProgressClasses } from '@mui/material/LinearProgress';
+import {homePageText as lang} from '../lang'
 
-import {
-  IndiaFlag,
-  UsaFlag,
-  BrazilFlag,
-  GlobeFlag,
-} from '../internals/components/CustomIcons';
+
+import Button from "@mui/material/Button";
+import {CardActions} from "@mui/material";
 
 const data = [
-  { label: 'India', value: 50000 },
-  { label: 'USA', value: 35000 },
-  { label: 'Brazil', value: 10000 },
-  { label: 'Other', value: 5000 },
+  { label: lang.services_chart.choose_your_land, value: 50000 },
+  { label: lang.services_chart.buy_your_land, value: 35000 },
+  { label: lang.services_chart.plan_your_land, value: 10000 },
+  { label: lang.services_chart.future_cities, value: 5000 },
 ];
 
 const countries = [
   {
-    name: 'India',
+    name: lang.services_chart.choose_your_land,
     value: 50,
-    flag: <IndiaFlag />,
+    // flag: <PinDrop />,
     color: 'hsl(220, 25%, 65%)',
   },
   {
-    name: 'USA',
+    name: lang.services_chart.buy_your_land,
     value: 35,
-    flag: <UsaFlag />,
+    // flag: <Paid />,
     color: 'hsl(220, 25%, 45%)',
   },
   {
-    name: 'Brazil',
+    name: lang.services_chart.plan_your_land,
     value: 10,
-    flag: <BrazilFlag />,
+    // flag: <AddLocation />,
     color: 'hsl(220, 25%, 30%)',
   },
   {
-    name: 'Other',
+    name: lang.services_chart.future_cities,
     value: 5,
-    flag: <GlobeFlag />,
+    // flag: <DomainAdd />,
     color: 'hsl(220, 25%, 20%)',
   },
 ];
@@ -121,7 +119,7 @@ const colors = [
   'hsl(220, 20%, 25%)',
 ];
 
-export default function ChartUserByCountry() {
+export default function ChartUserByCountry(props:{setShowDetails?:any}) {
   return (
     <Card
       variant="outlined"
@@ -129,7 +127,7 @@ export default function ChartUserByCountry() {
     >
       <CardContent>
         <Typography component="h2" variant="subtitle2">
-          Users by country
+          مسقط
         </Typography>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <PieChart
@@ -155,7 +153,7 @@ export default function ChartUserByCountry() {
               legend: { hidden: true },
             }}
           >
-            <PieCenterLabel primaryText="98.5K" secondaryText="Total" />
+            <PieCenterLabel primaryText="94K" secondaryText="الطلبات المكتملة" />
           </PieChart>
         </Box>
         {countries.map((country, index) => (
@@ -164,7 +162,6 @@ export default function ChartUserByCountry() {
             direction="row"
             sx={{ alignItems: 'center', gap: 2, pb: 2 }}
           >
-            {country.flag}
             <Stack sx={{ gap: 1, flexGrow: 1 }}>
               <Stack
                 direction="row"
@@ -195,6 +192,16 @@ export default function ChartUserByCountry() {
           </Stack>
         ))}
       </CardContent>
+      <CardActions>
+        {props.setShowDetails && <Button
+            color='info'
+            variant='contained'
+            fullWidth
+            onClick={() => props.setShowDetails(true)} //TODO:work on logic
+        >
+           الأراضي
+        </Button>}
+      </CardActions>
     </Card>
   );
 }

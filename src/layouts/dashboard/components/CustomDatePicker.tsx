@@ -43,10 +43,11 @@ function ButtonField(props: ButtonFieldProps) {
       aria-label={ariaLabel}
       size="small"
       onClick={() => setOpen?.((prev) => !prev)}
-      startIcon={<CalendarTodayRoundedIcon fontSize="small" />}
+      // startIcon={}
       sx={{ minWidth: 'fit-content' }}
     >
-      {label ? `${label}` : 'Pick a date'}
+        <CalendarTodayRoundedIcon fontSize="small" />
+      {/*{label ? `${label}` : 'Pick a date'}*/}
     </Button>
   );
 }
@@ -70,7 +71,7 @@ export default function CustomDatePicker() {
         open={open}
         onClose={() => setOpen(false)}
         onOpen={() => setOpen(true)}
-        views={['day', 'month', 'year']}
+        views={['day','month', 'year']}
       />
     </LocalizationProvider>
   );

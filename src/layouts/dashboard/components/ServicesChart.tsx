@@ -6,6 +6,7 @@ import Chip from '@mui/material/Chip';
 import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 import { LineChart } from '@mui/x-charts/LineChart';
+import {homePageText as lang} from '../lang'
 
 function AreaGradient({ color, id }: { color: string; id: string }) {
   return (
@@ -33,7 +34,7 @@ function getDaysInMonth(month: number, year: number) {
   return days;
 }
 
-export default function SessionsChart() {
+export default function ServicesChart() {
   const theme = useTheme();
   const data = getDaysInMonth(4, 2024);
 
@@ -47,7 +48,7 @@ export default function SessionsChart() {
     <Card variant="outlined" sx={{ width: '100%' }}>
       <CardContent>
         <Typography component="h2" variant="subtitle2" gutterBottom>
-          Sessions
+          {lang.services_chart.title}
         </Typography>
         <Stack sx={{ justifyContent: 'space-between' }}>
           <Stack
@@ -64,7 +65,7 @@ export default function SessionsChart() {
             <Chip size="small" color="success" label="+35%" />
           </Stack>
           <Typography variant="caption" sx={{ color: 'text.secondary' }}>
-            Sessions per day for the last 30 days
+            {lang.services_chart.description}
           </Typography>
         </Stack>
         <LineChart
@@ -78,8 +79,22 @@ export default function SessionsChart() {
           ]}
           series={[
             {
-              id: 'direct',
-              label: 'Direct',
+              id: 'choose_your_land',
+              label: lang.services_chart.choose_your_land,
+              showMark: false,
+              curve: 'linear',
+              stack: 'total',
+              area: true,
+              stackOrder: 'ascending',
+              data: [
+                300, 900, 600, 1200, 1500, 1800, 2400, 2100, 2700, 3000, 1800, 3300,
+                3600, 3900, 4200, 400, 2900, 4800, 5100, 5400, 4800, 5700, 6000,
+                6300, 6600, 690, 7200, 7500, 7800, 8100,
+              ],
+            },
+            {
+              id: 'buy_your_land',
+              label: lang.services_chart.buy_your_land,
               showMark: false,
               curve: 'linear',
               stack: 'total',
@@ -92,8 +107,8 @@ export default function SessionsChart() {
               ],
             },
             {
-              id: 'referral',
-              label: 'Referral',
+              id: 'plan_your_land',
+              label: lang.services_chart.plan_your_land,
               showMark: false,
               curve: 'linear',
               stack: 'total',
@@ -106,8 +121,8 @@ export default function SessionsChart() {
               ],
             },
             {
-              id: 'organic',
-              label: 'Organic',
+              id: 'future_cities',
+              label: lang.services_chart.future_cities,
               showMark: false,
               curve: 'linear',
               stack: 'total',

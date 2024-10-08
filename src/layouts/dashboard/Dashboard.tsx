@@ -18,6 +18,7 @@ import {
   datePickersCustomizations,
   treeViewCustomizations,
 } from './theme/customizations';
+import {Outlet} from "react-router-dom";
 
 const xThemeComponents = {
   ...chartsCustomizations,
@@ -28,10 +29,10 @@ const xThemeComponents = {
 
 export default function Dashboard(props: { disableCustomTheme?: boolean }) {
   return (
-    <AppTheme {...props} themeComponents={xThemeComponents}>
+    <AppTheme  {...props} themeComponents={xThemeComponents}>
       <CssBaseline enableColorScheme />
-      <Box sx={{ display: 'flex' }}>
-        <SideMenu />
+      <Box sx={{ display: 'flex' , direction:'rtl' }}>
+          {/* TODO: <SideMenu />*/}
         <AppNavbar />
         {/* Main content */}
         <Box
@@ -44,18 +45,22 @@ export default function Dashboard(props: { disableCustomTheme?: boolean }) {
             overflow: 'auto',
           })}
         >
-          <Stack
-            spacing={2}
-            sx={{
-              alignItems: 'center',
-              mx: 3,
-              pb: 10,
-              mt: { xs: 8, md: 0 },
-            }}
-          >
-            <Header />
-            <MainGrid />
-          </Stack>
+            <Stack
+                spacing={2}
+                sx={{
+                    alignItems: 'center',
+                    mx: 3,
+                    pb: 10,
+                    mt: {xs: 8, md: 0},
+                }}
+            >
+                <Header/>
+                {/*<MainGrid />*/}
+                <div id="detail">
+                    <Outlet/>
+                </div>
+
+            </Stack>
         </Box>
       </Box>
     </AppTheme>

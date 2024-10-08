@@ -7,6 +7,11 @@ import MenuButton from './MenuButton';
 import ColorModeIconDropdown from '../../shared-theme/ColorModeIconDropdown';
 
 import Search from './Search';
+import {Link} from "react-router-dom";
+import {paths} from "../../../routes/paths";
+import IconButton from "@mui/material/IconButton";
+import {Close, Logout} from "@mui/icons-material";
+import {Tooltip} from "@mui/material";
 
 export default function Header() {
   return (
@@ -26,10 +31,18 @@ export default function Header() {
       <Stack direction="row" sx={{ gap: 1 }}>
         <Search />
         <CustomDatePicker />
-        <MenuButton showBadge aria-label="Open notifications">
-          <NotificationsRoundedIcon />
-        </MenuButton>
         <ColorModeIconDropdown />
+          <Tooltip title="logout">
+          <Link to={paths.auth.root}>
+              <IconButton
+                  data-screenshot="toggle-mode"
+                  disableRipple
+                  size="small"
+              >
+                  <Logout/>
+              </IconButton>
+          </Link>
+              </Tooltip>
       </Stack>
     </Stack>
   );

@@ -8,6 +8,8 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { SparkLineChart } from '@mui/x-charts/SparkLineChart';
 import { areaElementClasses } from '@mui/x-charts/LineChart';
+import Divider from "@mui/material/Divider";
+import Grid from "@mui/material/Grid2";
 
 export type StatCardProps = {
   title: string;
@@ -98,6 +100,7 @@ export default function StatCard({
               </Typography>
               <Chip size="small" color={color} label={trendValues[trend]} />
             </Stack>
+            <br/>
             <Typography variant="caption" sx={{ color: 'text.secondary' }}>
               {interval}
             </Typography>

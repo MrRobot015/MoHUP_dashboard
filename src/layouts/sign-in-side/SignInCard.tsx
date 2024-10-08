@@ -2,12 +2,8 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import MuiCard from '@mui/material/Card';
-import Checkbox from '@mui/material/Checkbox';
-import Divider from '@mui/material/Divider';
 import FormLabel from '@mui/material/FormLabel';
 import FormControl from '@mui/material/FormControl';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Link from '@mui/material/Link';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 
@@ -15,7 +11,9 @@ import { styled } from '@mui/material/styles';
 
 import ForgotPassword from './ForgotPassword';
 import {form as lang} from './lang'
-import { GoogleIcon, FacebookIcon, SitemarkIcon } from './CustomIcons';
+import {SitemarkIcon } from './CustomIcons';
+import {useNavigate} from "../../routes/hooks";
+import {paths} from "../../routes/paths";
 
 const Card = styled(MuiCard)(({ theme }) => ({
   display: 'flex',
@@ -40,7 +38,8 @@ export default function SignInCard() {
   const [civilIdErrorMessage, setCivilIdErrorMessage] = React.useState('');
   const [passwordError, setPasswordError] = React.useState(false);
   const [passwordErrorMessage, setPasswordErrorMessage] = React.useState('');
- ;
+
+  const navigate = useNavigate();
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -49,6 +48,7 @@ export default function SignInCard() {
       civil_id: data.get('civil_id'),
       password: data.get('password'),
     });
+    navigate(paths.dashboard.home)
   };
 
   const validateInputs = () => {

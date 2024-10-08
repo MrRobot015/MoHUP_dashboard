@@ -3,6 +3,7 @@ import FormControl from '@mui/material/FormControl';
 import InputAdornment from '@mui/material/InputAdornment';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
+import {headerText as lang} from "../lang";
 
 export default function Search() {
   return (
@@ -10,10 +11,10 @@ export default function Search() {
       <OutlinedInput
         size="small"
         id="search"
-        placeholder="Search…"
+        placeholder= {lang.search}
         sx={{ flexGrow: 1 }}
         startAdornment={
-          <InputAdornment position="start" sx={{ color: 'text.primary' }}>
+          <InputAdornment position="start" sx={{ color: 'text.primary' , mx:0.5 }}>
             <SearchRoundedIcon fontSize="small" />
           </InputAdornment>
         }

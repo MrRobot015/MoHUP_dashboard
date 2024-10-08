@@ -1,12 +1,12 @@
-import * as React from 'react';
-import SignInSide from "./layouts/sign-in-side/SignInSide";
+import {RouterProvider} from "react-router-dom";
+import router from "./routes/Routes";
 
-
-
-export default function App() {
-  return (
-    <>
-      <SignInSide/>
-    </>
-  );
+const App = () => {
+    return (
+        <>
+        <RouterProvider router={router}/>
+        </>
+    )
 }
+
+export default App;
