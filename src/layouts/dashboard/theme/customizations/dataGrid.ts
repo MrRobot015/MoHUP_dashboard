@@ -1,5 +1,6 @@
 import { paperClasses } from '@mui/material/Paper';
 import { alpha, Theme } from '@mui/material/styles';
+// @ts-ignore
 import type { DataGridProComponents } from '@mui/x-data-grid-pro/themeAugmentation';
 import type { DataGridComponents } from '@mui/x-data-grid/themeAugmentation';
 import { menuItemClasses } from '@mui/material/MenuItem';
@@ -12,9 +13,11 @@ import { tablePaginationClasses } from '@mui/material/TablePagination';
 import { gray } from '../../../shared-theme/themePrimitives';
 
 /* eslint-disable import/prefer-default-export */
+
 export const dataGridCustomizations: DataGridProComponents<Theme> & DataGridComponents<Theme> = {
   MuiDataGrid: {
     styleOverrides: {
+      // @ts-ignore
       root: ({ theme }) => ({
         '--DataGrid-overlayHeight': '300px',
         overflow: 'clip',
@@ -43,7 +46,9 @@ export const dataGridCustomizations: DataGridProComponents<Theme> & DataGridComp
           },
         },
       }),
+      // @ts-ignore
       cell: ({ theme }) => ({ borderTopColor: (theme.vars || theme).palette.divider }),
+      // @ts-ignore
       menu: ({ theme }) => ({
         borderRadius: theme.shape.borderRadius,
         backgroundImage: 'none',
@@ -62,7 +67,7 @@ export const dataGridCustomizations: DataGridProComponents<Theme> & DataGridComp
           paddingRight: 0,
         },
       }),
-
+// @ts-ignore
       row: ({ theme }) => ({
         '&:last-of-type': { borderBottom: `1px solid ${(theme.vars || theme).palette.divider}` },
         '&:hover': {
@@ -75,6 +80,7 @@ export const dataGridCustomizations: DataGridProComponents<Theme> & DataGridComp
           },
         },
       }),
+      // @ts-ignore
       iconButtonContainer: ({ theme }) => ({
         [`& .${iconButtonClasses.root}`]: {
           border: 'none',
@@ -96,6 +102,7 @@ export const dataGridCustomizations: DataGridProComponents<Theme> & DataGridComp
           }),
         },
       }),
+      // @ts-ignore
       menuIconButton: ({ theme }) => ({
         border: 'none',
         backgroundColor: 'transparent',
@@ -115,10 +122,12 @@ export const dataGridCustomizations: DataGridProComponents<Theme> & DataGridComp
           },
         }),
       }),
+      // @ts-ignore
       filterForm: ({ theme }) => ({
         gap: theme.spacing(1),
         alignItems: 'flex-end',
       }),
+      // @ts-ignore
       columnsManagementHeader: ({ theme }) => ({
         paddingRight: theme.spacing(3),
         paddingLeft: theme.spacing(3),

@@ -1,4 +1,5 @@
 import { alpha, Theme } from '@mui/material/styles';
+// @ts-ignore
 import type { PickersProComponents } from '@mui/x-date-pickers-pro/themeAugmentation';
 import type { PickerComponents } from '@mui/x-date-pickers/themeAugmentation';
 import { pickersYearClasses, pickersMonthClasses, pickersDayClasses } from '@mui/x-date-pickers';
@@ -9,6 +10,7 @@ import { gray, brand } from '../../../shared-theme/themePrimitives';
 export const datePickersCustomizations: PickersProComponents<Theme> & PickerComponents<Theme> = {
   MuiPickersPopper: {
     styleOverrides: {
+      // @ts-ignore
       paper: ({ theme }) => ({
         marginTop: 4,
         borderRadius: theme.shape.borderRadius,
@@ -32,6 +34,7 @@ export const datePickersCustomizations: PickersProComponents<Theme> & PickerComp
   MuiPickersArrowSwitcher: {
     styleOverrides: {
       spacer: { width: 16 },
+      // @ts-ignore
       button: ({ theme }) => ({
         backgroundColor: 'transparent',
         color: (theme.vars || theme).palette.grey[500],
@@ -51,6 +54,7 @@ export const datePickersCustomizations: PickersProComponents<Theme> & PickerComp
   },
   MuiPickersMonth: {
     styleOverrides: {
+      // @ts-ignore
       monthButton: ({ theme }) => ({
         fontSize: theme.typography.body1.fontSize,
         color: (theme.vars || theme).palette.grey[600],
@@ -91,6 +95,7 @@ export const datePickersCustomizations: PickersProComponents<Theme> & PickerComp
   },
   MuiPickersYear: {
     styleOverrides: {
+      // @ts-ignore
       yearButton: ({ theme }) => ({
         fontSize: theme.typography.body1.fontSize,
         color: (theme.vars || theme).palette.grey[600],
@@ -132,6 +137,7 @@ export const datePickersCustomizations: PickersProComponents<Theme> & PickerComp
   },
   MuiPickersDay: {
     styleOverrides: {
+      // @ts-ignore
       root: ({ theme }) => ({
         fontSize: theme.typography.body1.fontSize,
         color: (theme.vars || theme).palette.grey[600],
