@@ -69,7 +69,7 @@ export default function StatCard({
         ? theme.palette.grey[400]
         : theme.palette.grey[700],
     none: null
-  };
+  }
 
   const labelColors = {
     up: 'success' as const,
@@ -99,7 +99,14 @@ export default function StatCard({
             >
               <Typography variant="h4" component="p">
                 {value}
+                {
+                    title === 'الطلبات المنجزة' &&
+                    <Typography variant='caption' component="p">
+                      <Chip size="small" color='default' label={16_000}/>
+                  </Typography>
+                }
               </Typography>
+
               { trend !== 'none' && <Chip size="small" color={color} label={trendValues[trend]}/>}
             </Stack>
             <br/>

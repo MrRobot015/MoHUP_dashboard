@@ -83,26 +83,8 @@ export function renderAvatar(
 export const columns: GridColDef[] = [
     {field: 'pageTitle', headerName: 'المحافظة', flex: 1, align: 'right',minWidth:100},
     {
-        field: 'status',
-        headerName: 'نسبة تلبية الطلبات',
-        flex: 1,
-        headerAlign: 'center',
-        align: 'center',
-        minWidth:100,
-        renderCell: (params) => renderStatus(params.value as any),
-    },
-    {
-        field: 'users',
-        headerName: 'الاراضي ',
-        headerAlign: 'center',
-        align: 'center',
-        flex: 1,
-        minWidth:100
-
-    },
-    {
         field: 'eventCount',
-        headerName: 'الطلبات الجديدة',
+        headerName: 'الطلبات المستهدفة',
         headerAlign: 'center',
         align: 'center',
         flex: 1,
@@ -111,7 +93,7 @@ export const columns: GridColDef[] = [
     },
     {
         field: 'viewsPerUser',
-        headerName: 'الطلبات المكتملة',
+        headerName: 'الطلبات المنجزة',
         headerAlign: 'center',
         align: 'center',
         flex: 1,
@@ -119,12 +101,22 @@ export const columns: GridColDef[] = [
 
     },
     {
-        field: 'viewsPerUser1',
-        headerName: 'العدد الكلي للطلبات',
+        field: 'status',
+        headerName: 'نسبة الانجاز',
+        flex: 1,
+        headerAlign: 'center',
+        align: 'center',
+        minWidth:100,
+        renderCell: (params) => renderStatus(params.value as any),
+    },
+    {
+        field: 'users',
+        headerName: 'الاراضي الجاهزة للتوزيع',
         headerAlign: 'center',
         align: 'center',
         flex: 1,
         minWidth:100
+
     },
 ];
 
@@ -235,6 +227,13 @@ export const rows: GridRowsProp = [
 const columns_details: GridColDef[] = [
     {field: 'pageTitle', headerName: 'الولاية', flex: 1, align: 'right', minWidth: 200},
     {
+        field: 'eventCount',
+        headerName: 'عدد الطلبات المستهدف',
+        headerAlign: 'center',
+        align: 'center',
+        flex: 1,
+    },
+    {
         field: 'status',
         headerName: 'نسبة تلبية الطلبات',
         flex: 1,
@@ -243,22 +242,15 @@ const columns_details: GridColDef[] = [
         renderCell: (params) => renderStatus(params.value as any),
     },
     {
+        field: 'viewsPerUser',
+        headerName: 'عدد الطلبات المنجزة',
+        headerAlign: 'center',
+        align: 'center',
+        flex: 1,
+    },
+    {
         field: 'users',
         headerName: 'الاراضي ',
-        headerAlign: 'center',
-        align: 'center',
-        flex: 1,
-    },
-    {
-        field: 'eventCount',
-        headerName: 'عدد   الطلبات الجديدة',
-        headerAlign: 'center',
-        align: 'center',
-        flex: 1,
-    },
-    {
-        field: 'viewsPerUser',
-        headerName: 'عدد الطلبات المكتملة',
         headerAlign: 'center',
         align: 'center',
         flex: 1,

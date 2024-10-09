@@ -7,8 +7,6 @@ import Stack from '@mui/material/Stack';
 import { BarChart } from '@mui/x-charts/BarChart';
 import { useTheme } from '@mui/material/styles';
 import {homePageText as lang} from '../lang'
-import Select from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
 import {Autocomplete} from "@mui/material";
 import TextField from "@mui/material/TextField";
 import {useState} from "react";
@@ -28,7 +26,7 @@ export default function ReturnsChart() {
     <Card variant="outlined" sx={{ width: '100%' }}>
       <CardContent>
         <Typography component="h2" variant="subtitle2" gutterBottom>
-          {lang.returns_chart.title + ' ' + value}
+          {lang.returns_chart.title }
         </Typography>
         <Stack sx={{ justifyContent: 'space-between' }}>
           <Stack
@@ -42,7 +40,6 @@ export default function ReturnsChart() {
             <Typography variant="h4" component="p">
               1.3M
             </Typography>
-            <Chip size="small" color="success" label="+18%" />
           </Stack>
           <Typography variant="caption" sx={{ color: 'text.secondary' }}>
             {lang.returns_chart.description}

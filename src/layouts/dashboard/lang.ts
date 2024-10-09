@@ -7,7 +7,7 @@ export const  headerText = {
 export const homePageText = {
     overview: 'إحصائيات عامة',
     cards:{
-        period:'بيانات  سنة ٢٠٢٤',
+        period:' ٢٠٢٤',
         requested_lands:{
             title:'الأراضي الجاهزة للتوزيع',
         },
@@ -32,7 +32,7 @@ export const homePageText = {
     },
 
     returns_chart:{
-        title: 'عوائد',
+        title: 'العوائد المالية',
         description: 'عدض النتائج على حسب الولاية',
         choose_your_land: 'اختر أرضك',
         buy_your_land:'إقتني أرضك',

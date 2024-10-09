@@ -16,7 +16,7 @@ import {useState} from "react";
 const data: StatCardProps[] = [
   {
     title: 'الطلبات المنجزة', // req in final stage
-    value: '14k',
+    value: '14,000',
     interval: lang.cards.period,
     trend: 'up',
     data: [
@@ -27,8 +27,8 @@ const data: StatCardProps[] = [
   {
     title: lang.cards.requested_lands.title,
     value: '325',
-    interval: lang.cards.period,
-    trend: 'up',
+    interval:'',
+    trend: 'none',
     data: [
       1640, 1250, 970, 1130, 1050, 900, 720, 1080, 900, 450, 920, 820, 840, 600, 820,
       780, 800, 760, 380, 740, 660, 620, 840, 500, 520, 480, 400, 360, 300, 220,
@@ -37,8 +37,8 @@ const data: StatCardProps[] = [
   {
     title: 'الطلبات المتبقية (من الاجمالي)',
     value: '200k',
-    interval: lang.cards.period,
-    trend: 'up',
+    interval: '',
+    trend: 'none',
     data: [
       500, 400, 510, 530, 520, 600, 530, 520, 510, 730, 520, 510, 530, 620, 510, 530,
       520, 410, 530, 520, 610, 530, 520, 610, 530, 420, 510, 430, 520, 510,
@@ -89,7 +89,6 @@ export default function MainGrid() {
       <Grid container spacing={2} columns={12} >
         <Grid size={{ md: 12, lg: 10 }}>
           <CustomizedDataGrid setShowChart={setShowChart} />
-          {showChart && <CustomizedDataGrid type='lands'/>}
         </Grid>
         <Grid size={{ xs: 12, lg: 2 }}>
           <Stack gap={2} direction={{ xs: 'column', sm: 'row', lg: 'column' }}>
