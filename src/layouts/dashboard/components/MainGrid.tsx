@@ -28,7 +28,7 @@ const data: StatCardProps[] = [
     title: lang.cards.requested_lands.title,
     value: '325',
     interval: lang.cards.period,
-    trend: 'down',
+    trend: 'up',
     data: [
       1640, 1250, 970, 1130, 1050, 900, 720, 1080, 900, 450, 920, 820, 840, 600, 820,
       780, 800, 760, 380, 740, 660, 620, 840, 500, 520, 480, 400, 360, 300, 220,
@@ -38,7 +38,7 @@ const data: StatCardProps[] = [
     title: 'الطلبات المتبقية (من الاجمالي)',
     value: '200k',
     interval: lang.cards.period,
-    trend: 'neutral',
+    trend: 'up',
     data: [
       500, 400, 510, 530, 520, 600, 530, 520, 510, 730, 520, 510, 530, 620, 510, 530,
       520, 410, 530, 520, 610, 530, 520, 610, 530, 420, 510, 430, 520, 510,
@@ -48,7 +48,7 @@ const data: StatCardProps[] = [
     title: 'العوائد المالية',
     value: '200k',
     interval: lang.cards.period,
-    trend: 'neutral',
+    trend: 'none',
     data: [
       500, 400, 510, 530, 520, 600, 530, 520, 510, 730, 520, 510, 530, 620, 510, 530,
       520, 410, 530, 520, 610, 530, 520, 610, 530, 420, 510, 430, 520, 510,

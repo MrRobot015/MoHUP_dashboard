@@ -7,7 +7,7 @@ export const  headerText = {
 export const homePageText = {
     overview: 'إحصائيات عامة',
     cards:{
-        period:'اخر ٣٠ يوم',
+        period:'بيانات  سنة ٢٠٢٤',
         requested_lands:{
             title:'الأراضي الجاهزة للتوزيع',
         },
