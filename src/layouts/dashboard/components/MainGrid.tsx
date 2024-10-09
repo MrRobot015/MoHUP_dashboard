@@ -62,7 +62,7 @@ export default function MainGrid() {
 
 
   return (
-    <Box component='div' sx={{ width: '100%', maxWidth: '100%' }}>
+    <Box  sx={{ width: '100%', maxWidth: '100%' }}>
       {/* cards */}
       <Typography component="h2" variant="h6" sx={{ mb: 2 }}>
         {lang.overview}
@@ -82,7 +82,7 @@ export default function MainGrid() {
         {/*<Grid size={{ sm: 12, md: 6 }}>*/}
         {/*  <ServicesChart />*/}
         {/*</Grid>*/}
-        <Grid size={{ sm: 12, md: 12 }}>
+        <Grid size={{ sm: 12, md: 12 , xs:12 }}>
           <ReturnsChart />
         </Grid>
       </Grid>

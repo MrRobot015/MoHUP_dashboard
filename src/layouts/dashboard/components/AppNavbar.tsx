@@ -10,6 +10,13 @@ import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import DashboardRoundedIcon from '@mui/icons-material/DashboardRounded';
 import SideMenuMobile from './SideMenuMobile';
 import MenuButton from './MenuButton';
+import ColorModeIconDropdown from "../../shared-theme/ColorModeIconDropdown";
+import {Tooltip} from "@mui/material";
+import {Link} from "react-router-dom";
+import {paths} from "../../../routes/paths";
+import IconButton from "@mui/material/IconButton";
+import {Logout} from "@mui/icons-material";
+import Grid from "@mui/material/Grid2";
 
 const Toolbar = styled(MuiToolbar)({
   width: '100%',
@@ -58,15 +65,27 @@ export default function AppNavbar() {
           }}
         >
           <Stack direction="row" spacing={1} sx={{ justifyContent: 'center' }}>
-            <CustomIcon />
             <Typography variant="h4" component="h1" sx={{ color: 'text.primary' }}>
-              Dashboard
+               لوحة التحكم
+            {/*TODO: work on responsive desgin*/}
             </Typography>
           </Stack>
-          <MenuButton aria-label="menu" onClick={toggleDrawer(true)}>
-            <MenuRoundedIcon />
-          </MenuButton>
-          <SideMenuMobile open={open} toggleDrawer={toggleDrawer} />
+            <Grid >
+                <ColorModeIconDropdown />
+                <Tooltip title="logout">
+                    <Link to={paths.auth.root}>
+                        <IconButton
+                            data-screenshot="toggle-mode"
+                            disableRipple
+                            style={{marginInline:10}}
+                            size="small"
+                        >
+                            <Logout/>
+                        </IconButton>
+                    </Link>
+                </Tooltip>
+            </Grid>
+
         </Stack>
       </Toolbar>
     </AppBar>
@@ -79,7 +98,6 @@ export function CustomIcon() {
       sx={{
         width: '1.5rem',
         height: '1.5rem',
-        bgcolor: 'black',
         borderRadius: '999px',
         display: 'flex',
         justifyContent: 'center',
@@ -93,7 +111,7 @@ export function CustomIcon() {
         boxShadow: 'inset 0 2px 5px rgba(255, 255, 255, 0.3)',
       }}
     >
-      <DashboardRoundedIcon color="inherit" sx={{ fontSize: '1rem' }} />
+      {/*<DashboardRoundedIcon color="inherit" sx={{ fontSize: '1rem' }} />*/}
     </Box>
   );
 }
